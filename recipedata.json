@@ -1,0 +1,10 @@
+{
+“recipes”: [
+ {
+   “id”: 1,
+   “name”: name of recipe,
+   “description”: Description of recipe,
+   “ingredients”: [“item1”, “item2”,…],
+   “instruction”: [“step 1”, “step 2”,…],
+   “image”: “images/(recipe name).jpg”
+},

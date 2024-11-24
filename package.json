@@ -15,12 +15,11 @@
   "devDependencies": {
     "gh-pages": "^3.2.3"
   },
-  },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject", // Added missing comma here
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
   },

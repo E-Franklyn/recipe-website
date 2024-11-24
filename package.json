@@ -1,8 +1,8 @@
 {
+  "homepage": "https://E-Franklyn.github.io/recipe-website",
   "name": "recipe",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://jLl694.github.io/Recipe-Design-Website",
   "dependencies": {
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",

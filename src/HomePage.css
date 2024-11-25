@@ -1,0 +1,205 @@
+.content {
+    display: block;
+    justify-content: space-between;
+    margin: 20px 5%;
+}
+
+
+.top-sections {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.section {
+    width: 45%;
+}
+
+.daily-special,
+.trending {
+    padding: 20px;
+    background-color: #f8f8f8;
+    border-radius: 10px;
+    height: 30em;
+}
+
+.daily-special img,
+.trending img {
+    width: 100%;
+    height: auto;
+    margin-top: 10px;
+}
+
+.trending-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.trending-item img {
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+    border-radius: 5px;
+}
+
+.daily-special .button {
+    display: inline-block;
+    font-size: 1.5em;
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 10px 0;
+}
+
+.daily-special .button:hover {
+    text-decoration: underline;
+}
+
+.daily-special-image {
+    display: block;
+    width: 100%;
+    height: auto;
+    margin-top: 10px;
+}
+
+.random-recipe {
+    width: 97.5%;
+    padding: 20px;
+    background-color: #f8f8f8;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+.random-recipe-text {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.random-recipe h2 {
+    display: flex;
+    align-items: center;
+}
+
+@keyframes gradient-motion {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.random-button {
+    display: block;
+    margin: 0 auto;
+    padding: 10px 30px;
+    border-radius: 25px !important;
+    background: linear-gradient(to right, rgba(30, 30, 30, 1), rgba(100, 100, 100, 1), rgba(100, 100, 100, 1), rgba(100, 100, 100, 1), rgba(30, 30, 30, 1));
+    background-size: 200% 200%;
+    color: white;
+    border: 2px solid white;
+    box-shadow: 4px -4px 8px rgba(0, 0, 0, 0.5);
+    font-size: 1.5em !important;
+    cursor: pointer;
+    transition: border-color 0.3s ease;
+}
+
+.random-button:hover {
+    animation: gradient-motion 3s ease infinite;
+    border-color: lightblue;
+}
+
+.random-recipe-content {
+    display: flex;
+}
+
+.random-recipe-image {
+    width: 50%;
+}
+
+.random-button {
+    font: inherit;
+    margin-top: 10px;
+    padding: 10px 15px;
+    font-size: 0.65em;
+    color: white;
+    background-color: black;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.random-button:hover {
+    background-color: darkgrey;
+}
+
+
+
+
+.customer-reviews {
+    width: 97.5%;
+    padding: 20px;
+    background-color: #f8f8f8;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+.reviews-title {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.customer-reviews-content {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.review-item {
+    display: flex;
+    justify-content: center;
+    width: 30%;
+    margin-bottom: 20px;
+}
+
+.review-container {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.profile-pic {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    overflow: hidden;
+}
+
+.review-details {
+    flex-grow: 1;
+    padding-left: 10px;
+}
+
+.review-header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.customer-name {
+    font-weight: bold;
+}
+
+.star-rating {
+    color: gold;
+}

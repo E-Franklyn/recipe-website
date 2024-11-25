@@ -34,16 +34,16 @@ const Popular = () => {
     };
 
     const barColors = [
-        "#5832d5", // Rank 1
-        "#523fcf", // Rank 2
-        "#4f4aca", // Rank 3
-        "#4856c3", // Rank 4
-        "#4362bd", // Rank 5
-        "#3d6db7", // Rank 6
-        "#3879b3", // Rank 7
-        "#3285ad", // Rank 8
-        "#2d90a7", // Rank 9
-        "#299ca1"  // Rank 10
+        "#5832d5",
+        "#523fcf",
+        "#4f4aca",
+        "#4856c3",
+        "#4362bd",
+        "#3d6db7",
+        "#3879b3",
+        "#3285ad",
+        "#2d90a7",
+        "#299ca1"
     ];
 
     const [animateBars, setAnimateBars] = useState(false);
@@ -51,7 +51,7 @@ const Popular = () => {
     useEffect(() => {
         const timer = setTimeout(() => {
             setAnimateBars(true);
-        }, 100); // Delay to ensure initial render
+        }, 100);
 
         return () => clearTimeout(timer);
     }, []);

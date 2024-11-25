@@ -1,4 +1,6 @@
 import React from 'react';
+import './HomePage.css';
+
 import r1 from './Assets/Reviews/1.jpg';
 import r2 from './Assets/Reviews/2.jpg';
 import r3 from './Assets/Reviews/3.jpg';
@@ -7,6 +9,7 @@ import r5 from './Assets/Reviews/5.jpg';
 
 const HomePage = () => {
     return (
+
         <main className="content">
             {/* -------------------------------------- Main Content ------------------------------------------------ */}
             <div className="top-sections">
@@ -41,20 +44,66 @@ const HomePage = () => {
             <div className="section customer-reviews">
                 <h2 className="reviews-title">Customer Reviews</h2>
                 <div className="customer-reviews-content">
-                    {[r1, r2, r3, r4, r5].map((reviewImage, index) => (
-                        <div className="review-item" key={index}>
-                            <div className="review-container">
-                                <img src={reviewImage} alt={`Customer ${index + 1}`} className="profile-pic" />
-                                <div className="review-details">
-                                    <div className="review-header">
-                                        <span className="customer-name">Customer {index + 1}</span>
-                                        <span className="star-rating">⭐⭐⭐⭐⭐</span>
-                                    </div>
-                                    <p>Sample review text for customer {index + 1}.</p>
+                    <div className="review-item">
+                        <div className="review-container">
+                            <img src={r1} alt="Customer Alice" className="profile-pic" />
+                            <div className="review-details">
+                                <div className="review-header">
+                                    <span className="customer-name">Dudley Bernhard</span>
+                                    <span className="star-rating">⭐⭐⭐⭐⭐</span>
                                 </div>
+                                <p>Great recipes would recommend!</p>
                             </div>
                         </div>
-                    ))}
+                    </div>
+                    <div className="review-item">
+                        <div className="review-container">
+                            <img src={r2} alt="Customer Bob" className="profile-pic" />
+                            <div className="review-details">
+                                <div className="review-header">
+                                    <span className="customer-name">Emily Kozey</span>
+                                    <span className="star-rating">⭐⭐⭐⭐</span>
+                                </div>
+                                <p>Absolutely love these dishes!</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="review-item">
+                        <div className="review-container">
+                            <img src={r3} alt="Customer Charlie" className="profile-pic" />
+                            <div className="review-details">
+                                <div className="review-header">
+                                    <span className="customer-name">Keyshawn Harber</span>
+                                    <span className="star-rating">⭐⭐⭐⭐⭐</span>
+                                </div>
+                                <p>Fantastic experience, will try again.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="review-item">
+                        <div className="review-container">
+                            <img src={r4} alt="Diana" className="profile-pic" />
+                            <div className="review-details">
+                                <div className="review-header">
+                                    <span className="customer-name">Jimmy Witting</span>
+                                    <span className="star-rating">⭐⭐⭐</span>
+                                </div>
+                                <p>Delicious food and easy instructions!</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="review-item">
+                        <div className="review-container">
+                            <img src={r5} alt="Ethan" className="profile-pic" />
+                            <div className="review-details">
+                                <div className="review-header">
+                                    <span className="customer-name">Jonathon Tremblay</span>
+                                    <span className="star-rating">⭐⭐⭐⭐</span>
+                                </div>
+                                <p>Highly satisfied with the quality!</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </main>

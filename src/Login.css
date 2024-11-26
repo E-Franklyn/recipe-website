@@ -1,0 +1,67 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;600&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    font-family: 'Raleway', sans-serif;
+}
+
+.login-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: calc(100vh - 60px);
+}
+
+.container {
+    width: 400px;
+    height: auto;
+    background-color: white;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.input {
+    width: 300px !important;
+    padding: 10px;
+    margin: 10px 0;
+    border: 2px solid black;
+    border-radius: 4px;
+    text-align: left;
+    font-family: 'Raleway', sans-serif;
+    box-sizing: border-box;
+    outline: none;
+}
+
+.input:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+.login-button {
+    width: 300px !important;
+    display: block;
+    margin: 25px auto;
+    padding: 5px 20px;
+    border-radius: 25px !important;
+    background: linear-gradient(to right, rgba(30, 30, 30, 1), rgba(100, 100, 100, 1), rgba(100, 100, 100, 1), rgba(100, 100, 100, 1), rgba(30, 30, 30, 1));
+    background-size: 200% 200%;
+    color: white;
+    border: 2px solid white;
+    font-family: 'Raleway', sans-serif;
+    font-weight: bold;
+    font-size: 1.5em !important;
+    cursor: pointer;
+    transition: border-color 0.3s ease;
+}
+
+.login-button:hover {
+    animation: gradient-motion 3s ease infinite;
+    border-color: black;
+}

@@ -27,7 +27,7 @@ const Create = () => {
         <div className="create-recipe-container">
             <h2>Create a Recipe</h2>
             <div className="image-wrapper">
-                <img src={image1} alt="Delicious apple cake" className="side-image" />
+                <img src={image1} alt="idk1" className="side-image" />
                 <form className="recipe-form" onSubmit={handleSubmit}>
                     
                     <label>

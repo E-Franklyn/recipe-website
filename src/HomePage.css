@@ -4,6 +4,10 @@
     margin: 20px 5%;
 }
 
+.body {
+    background-color: white;
+    margin: 0;
+}
 
 .top-sections {
     display: flex;
@@ -12,7 +16,7 @@
 }
 
 .section {
-    width: 45%;
+    width: 46.5%;
 }
 
 .daily-special,
@@ -21,6 +25,32 @@
     background-color: #f8f8f8;
     border-radius: 10px;
     height: 30em;
+    border: 2px solid black;
+    transition: transform 1s;
+}
+
+.daily-special {
+    text-align: center;
+    overflow: hidden;
+    position: relative;
+}
+
+.daily-special-image {
+    width: 80%;
+    height: auto;
+    max-height: 85%;
+    object-fit: cover;
+    border: 2px solid black;
+    border-radius: 10px;
+}
+
+.trending {
+    text-align: center;
+}
+
+.daily-special:hover,
+.trending:hover {
+    transform: scale(1.025);
 }
 
 .daily-special img,
@@ -30,17 +60,34 @@
     margin-top: 10px;
 }
 
-.trending-item {
+.section.trending {
     display: flex;
-    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.trending-title {
+    width: 100%;
+    text-align: center;
     margin-bottom: 10px;
 }
 
+.trending-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 5px;
+    width: calc(50% - 20px);
+    font-weight: bold;
+}
+
 .trending-item img {
-    width: 50px;
-    height: 50px;
-    margin-right: 10px;
-    border-radius: 5px;
+    width: 100%;
+    height: auto;
+    max-height: 150px;
+    object-fit: cover;
+    margin-bottom: 5px;
 }
 
 .daily-special .button {
@@ -52,7 +99,7 @@
     padding: 10px 0;
 }
 
-.daily-special .button:hover {
+.daily-special .daily-special .button:hover {
     text-decoration: underline;
 }
 
@@ -69,6 +116,12 @@
     background-color: #f8f8f8;
     border-radius: 10px;
     margin-top: 20px;
+    border: 2px solid black;
+    transition: transform 1s;
+}
+
+.random-recipe:hover {
+    transform: scale(1.05);
 }
 
 .random-recipe-text {
@@ -96,6 +149,14 @@
     }
 }
 
+.recipe-image {
+    width: 500px;
+    height: auto;
+    object-fit: cover;
+    border: 2px solid black;
+    border-radius: 10px;
+}
+
 .random-button {
     display: block;
     margin: 0 auto;
@@ -113,15 +174,34 @@
 
 .random-button:hover {
     animation: gradient-motion 3s ease infinite;
-    border-color: lightblue;
+    border-color: black;
+}
+
+.random-recipe-text {
+    font-size: 18px;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+.random-recipe-text p {
+    margin: 5px 0;
+    display: block;
 }
 
 .random-recipe-content {
     display: flex;
 }
 
+.random-recipe-block {
+    display: block;
+}
+
 .random-recipe-image {
     width: 50%;
+}
+
+.random-padding {
+    padding: 20px;
 }
 
 .random-button {
@@ -140,15 +220,18 @@
     background-color: darkgrey;
 }
 
-
-
-
 .customer-reviews {
     width: 97.5%;
     padding: 20px;
     background-color: #f8f8f8;
     border-radius: 10px;
     margin-top: 20px;
+    border: 2px solid black;
+    transition: transform 1s;
+}
+
+.customer-reviews:hover {
+    transform: scale(1.05);
 }
 
 .reviews-title {
@@ -176,6 +259,11 @@
     padding: 10px;
     display: flex;
     align-items: center;
+    transition: transform 0.5s;
+}
+
+.review-container:hover {
+    transform: scale(1.05);
 }
 
 .profile-pic {

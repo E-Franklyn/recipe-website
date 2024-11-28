@@ -20,7 +20,7 @@ h1 {
     width: 100%;
     border-collapse: separate;
     border-spacing: 0 5px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 2px 50px black;
 }
 
 .top-recipes-table th,
@@ -91,7 +91,7 @@ h1 {
     color: white;
     border-radius: 0 10px 10px 0;
     font-family: 'Roboto', sans-serif;
-    transition: width 1s ease;
+    transition: width 2s ease;
 }
 
 .bar.initial {

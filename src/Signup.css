@@ -3,7 +3,7 @@
 body {
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
+    background-color: white;
     font-family: 'Raleway', sans-serif;
 }
 
@@ -12,14 +12,11 @@ body {
     justify-content: center;
     align-items: center;
     height: calc(100vh - 60px);
-    /* Adjust according to header size if applicable */
 }
 
 .container {
     width: 400px;
-    /* Fixed width for the container */
     height: auto;
-    /* Allow height to adjust based on content */
     background-color: white;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
     padding: 20px;
@@ -28,39 +25,27 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    /* Center align items */
 }
 
 .input {
     width: 80%;
-    /* Fixed width for inputs */
     padding: 10px;
     margin: 10px 0;
-    /* Keep vertical margin for spacing */
     border: 2px solid black;
-    /* Black border with increased thickness */
     border-radius: 4px;
-    /* Optional: Keep rounded corners */
     text-align: left;
-    /* Left align text inside input fields */
     font-family: 'Raleway', sans-serif;
-    /* Use the same font */
     box-sizing: border-box;
-    /* Include padding and border in width */
     outline: none;
-    /* Remove default outline on focus */
 }
 
 .input:focus {
     border-color: #007bff;
-    /* Change border color on focus (optional) */
     box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
-    /* Optional: Add shadow on focus */
 }
 
 .signup-button {
     width: 80%;
-    /* Match button width to inputs */
     display: block;
     margin: 25px auto;
     padding: 5px 20px;

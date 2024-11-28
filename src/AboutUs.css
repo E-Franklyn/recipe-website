@@ -1,0 +1,26 @@
+.about-us-container {
+    padding: 20px;
+}
+
+.about-us-container h1 {
+    padding: 10px 0;
+}
+
+.about-us-container h2 {
+    margin: 5px 0;
+    padding: 5px 0;
+}
+
+.about-us-container p,
+.about-us-container ul {
+    padding: 10px 0;
+}
+
+.about-us-container ul {
+    list-style-type: disc;
+    padding-left: 20px;
+}
+
+.about-us-container>* {
+    margin-bottom: 20px;
+}

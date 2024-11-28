@@ -1,10 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Exo+2:wght@400&family=Raleway:wght@400&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap');
 
+html,
 body {
-    font-family: 'Exo 2', sans-serif;
+    height: 100%;
     margin: 0;
     padding: 0;
+}
+
+body {
+    font-family: 'Exo 2', sans-serif;
+    background-color: white;
 }
 
 header {
@@ -104,15 +110,22 @@ nav ul li a:hover {
 }
 
 footer {
-    display: flex;
-    justify-content: space-between;
     padding: 20px;
     background-color: #f1f1f1;
 }
 
+.footer-content {
+    display: flex;
+    /* Use flexbox for layout */
+    justify-content: space-between;
+    /* Space between sections */
+}
+
 .footer-section {
     flex: 1;
+    /* Each section takes equal space */
     text-align: center;
+    /* Center text within each section */
 }
 
 .social-icons {
@@ -159,19 +172,22 @@ footer {
 
 .explore-links {
     display: flex;
-    flex-direction: column;
-}
-
-.first-line,
-.second-line {
-    display: flex;
+    flex-wrap: wrap;
+    /* Allow wrapping of links */
     justify-content: center;
+    /* Center the links */
 }
 
 .explore a {
     color: black;
     text-decoration: none;
-    margin: 5px 15px;
+    margin: 5px;
+}
+
+.explore-links a:focus,
+.explore-links a:active {
+    background: transparent;
+    /* Remove grey background on focus and active */
 }
 
 .explore a:hover {
@@ -187,8 +203,9 @@ footer {
 
 .circles {
     display: flex;
-    flex-wrap: wrap;
+    /* Ensure circles are in a row */
     justify-content: center;
+    /* Center all circles */
 }
 
 .circle {
@@ -200,11 +217,28 @@ footer {
     align-items: center;
     justify-content: center;
     margin: 10px;
-    text-decoration: none;
-    transition: transform 0.3s, background-color 0.3s;
+    /* Space between circles */
+}
+
+/* Center and space the developer text below the circles */
+.developer-text-container {
+    text-align: center;
+    margin-top: 10px;
 }
 
 .circle:hover {
     transform: scale(1.1);
     background-color: darkgrey;
+}
+
+.block-container {
+    display: block;
+    /* Ensure it's a block element */
+    width: 100%;
+    /* Take full width of the parent */
+    padding: 10px 0;
+    /* Optional spacing */
+    text-align: center;
+    /* Center the text */
+    margin-top: 20px;
 }

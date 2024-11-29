@@ -46,7 +46,7 @@ const HomePage = () => {
         ingredients: [],
         instruction: []
     });
-    const [showRecipeDetails, setShowRecipeDetails] = useState(false); // Added state for visibility
+    const [showRecipeDetails, setShowRecipeDetails] = useState(false);
 
     useEffect(() => {
         const recipe = recipeData.recipes.find(item => item.id === 11);
@@ -66,7 +66,7 @@ const HomePage = () => {
                         ingredients: recipe.ingredients || [],
                         instruction: recipe.instruction || [],
                     });
-                    setShowRecipeDetails(true); // Show details when button is pressed
+                    setShowRecipeDetails(true);
                 } else {
                     setRandomRecipe({
                         image: '',
@@ -120,7 +120,7 @@ const HomePage = () => {
                     </div>
                     <div className="random-recipe-text">
                         <div className="random-recipe-block">
-                            {showRecipeDetails && ( // Conditional rendering
+                            {showRecipeDetails && (
                                 <>
                                     <p className="random-padding name-text">Name: {randomRecipe.name}</p>
                                     <p className="random-padding">Description: {randomRecipe.description}</p>

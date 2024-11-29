@@ -116,16 +116,12 @@ footer {
 
 .footer-content {
     display: flex;
-    /* Use flexbox for layout */
     justify-content: space-between;
-    /* Space between sections */
 }
 
 .footer-section {
     flex: 1;
-    /* Each section takes equal space */
     text-align: center;
-    /* Center text within each section */
 }
 
 .social-icons {
@@ -173,9 +169,7 @@ footer {
 .explore-links {
     display: flex;
     flex-wrap: wrap;
-    /* Allow wrapping of links */
     justify-content: center;
-    /* Center the links */
 }
 
 .explore a {
@@ -187,7 +181,6 @@ footer {
 .explore-links a:focus,
 .explore-links a:active {
     background: transparent;
-    /* Remove grey background on focus and active */
 }
 
 .explore a:hover {
@@ -203,9 +196,7 @@ footer {
 
 .circles {
     display: flex;
-    /* Ensure circles are in a row */
     justify-content: center;
-    /* Center all circles */
 }
 
 .circle {
@@ -217,10 +208,8 @@ footer {
     align-items: center;
     justify-content: center;
     margin: 10px;
-    /* Space between circles */
 }
 
-/* Center and space the developer text below the circles */
 .developer-text-container {
     text-align: center;
     margin-top: 10px;
@@ -233,12 +222,8 @@ footer {
 
 .block-container {
     display: block;
-    /* Ensure it's a block element */
     width: 100%;
-    /* Take full width of the parent */
     padding: 10px 0;
-    /* Optional spacing */
     text-align: center;
-    /* Center the text */
     margin-top: 20px;
 }

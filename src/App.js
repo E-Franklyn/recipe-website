@@ -82,7 +82,7 @@ const RecipeWebsite = () => {
                         </div>
                     </div>
 
-                    {/* Block container for copyright */}
+                    {/*Copyright */}
                     <div className="block-container">
                         <p>&copy; {new Date().getFullYear()} Recipe Browser System. All rights reserved.</p>
                     </div>

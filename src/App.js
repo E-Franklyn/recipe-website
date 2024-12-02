@@ -12,7 +12,7 @@ import Recipe from './Recipe';
 
 const RecipeWebsite = () => {
     return (
-        <Router basename="/recipe-website">
+        <Router>
             <div>
                 {/* ------------------------------------------ Header -------------------------------------------------- */}
                 <header>

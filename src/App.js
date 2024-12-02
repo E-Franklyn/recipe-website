@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import { HashRouter as Router, Route, Routes } from 'react-router-dom';
+import { HashRouter as Router, Route, Routes, NavLink } from 'react-router-dom'; // Ensure NavLink is imported
 import Favorites from './Favorites';
 import Popular from './Popular';
 import Create from './Create';
@@ -84,7 +84,7 @@ const RecipeWebsite = () => {
                         </div>
                     </div>
 
-                    {/*Copyright */}
+                    {/* Copyright */}
                     <div className="block-container">
                         <p>&copy; {new Date().getFullYear()} Recipe Browser System. All rights reserved.</p>
                     </div>

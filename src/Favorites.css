@@ -1,0 +1,57 @@
+.Favorites {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+.favorite-item {
+    display: flex;
+    width: 70%;
+    margin: 10px 0;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+
+.f-left-section img {
+    width: 150px;
+    height: auto;
+}
+
+.f-middle-section {
+    flex-grow: 1;
+    padding-left: 20px;
+}
+
+.frandom-button {
+    display: block;
+    font-family: 'Raleway', sans-serif;
+    margin: 0 auto;
+    padding: 10px 30px;
+    border-radius: 25px !important;
+    background: linear-gradient(to right, rgba(30, 30, 30, 1), rgba(100, 100, 100, 1), rgba(100, 100, 100, 1), rgba(100, 100, 100, 1), rgba(30, 30, 30, 1));
+    background-size: 200% 200%;
+    color: white;
+    border: 2px solid white;
+    box-shadow: 4px -4px 8px rgba(0, 0, 0, 0.5);
+    font-size: 1.5em !important;
+    cursor: pointer;
+    transition: border-color 0.3s ease;
+}
+
+.frandom-button:hover {
+    animation: gradient-motion 3s ease infinite;
+    border-color: black;
+}
+
+.favorite-item.removing {
+    opacity: 0;
+    transform: translateX(-100%);
+}
+
+.fno-style-link {
+    text-decoration: none;
+    color: inherit;
+}

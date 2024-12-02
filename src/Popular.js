@@ -70,7 +70,11 @@ const Popular = () => {
                 <tbody>
                     {topTenRecipes.map((recipe) => (
                         <tr key={recipe.rank} className="table-row">
-                            <td className="recipe-name">{recipe.name}</td>
+                            <td className="recipe-name">
+                                <a href={`/recipe-website/recipe/${recipe.rank}`}>
+                                    {recipe.name}
+                                </a>
+                            </td>
                             <td className="rank">
                                 <div className="rank-box" style={{ backgroundColor: getRankColor(recipe.rank) }}>
                                     <span className="rank-number">{recipe.rank}</span>

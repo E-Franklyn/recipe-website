@@ -120,3 +120,8 @@ h1 {
     font-weight: bold;
     color: white;
 }
+
+.top-recipes-table a {
+    text-decoration: none;
+    color: inherit;
+}

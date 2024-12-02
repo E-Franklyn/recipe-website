@@ -8,6 +8,7 @@ import AboutUs from './AboutUs';
 import HomePage from './HomePage';
 import Login from './Login';
 import Signup from './Signup';
+import Recipe from './Recipe';
 
 const RecipeWebsite = () => {
     return (
@@ -45,6 +46,7 @@ const RecipeWebsite = () => {
                     <Route path="/about" element={<AboutUs />} />
                     <Route path="/login" element={<Login />} />
                     <Route path="/signup" element={<Signup />} />
+                    <Route path="/recipe/:pageId" element={<Recipe />} />
                 </Routes>
 
                 {/* ------------------------------------------ Footer -------------------------------------------------- */}
@@ -54,7 +56,7 @@ const RecipeWebsite = () => {
                             <h3>FOLLOW US</h3>
                             <div className="social-icons">
                                 {['youtube', 'facebook', 'twitter', 'tiktok'].map((platform) => (
-                                    <a key={platform} href="#"><i className={`fa-brands fa-${platform}`}></i></a>
+                                    <a key={platform} href="https://www.youtube.com/"><i className={`fa-brands fa-${platform}`}></i></a>
                                 ))}
                             </div>
                         </div>

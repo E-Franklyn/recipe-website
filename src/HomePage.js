@@ -94,7 +94,7 @@ const HomePage = () => {
             {/* -------------------------------------- Main Content ------------------------------------------------ */}
             <div className="top-sections">
                 <div className="section daily-special">
-                    <a href="/recipe-website/recipe/11" className="button">
+                    <a href="/recipe-website/#/recipe/11" className="button">
                         Daily Special - {dailySpecial ? ` ${dailySpecial.name}` : ''}
                     </a>
                     <img src={i11} alt="Daily Special" className="daily-special-image" />

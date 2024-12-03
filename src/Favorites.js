@@ -60,7 +60,7 @@ const Favorites = () => {
                     </div>
                     <div className="f-middle-section">
                         <h3>
-                            <a href={`/recipe-website/recipe/${favorite.id}`} className="fno-style-link">
+                            <a href={`/recipe-website/#/recipe/${favorite.id}`} className="fno-style-link">
                                 {favorite.name}
                             </a>
                         </h3>

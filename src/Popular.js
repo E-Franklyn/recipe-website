@@ -71,7 +71,7 @@ const Popular = () => {
                     {topTenRecipes.map((recipe) => (
                         <tr key={recipe.rank} className="table-row">
                             <td className="recipe-name">
-                                <a href={`/recipe-website/recipe/${recipe.rank}`}>
+                                <a href={`/recipe-website/#/recipe/${recipe.rank}`}>
                                     {recipe.name}
                                 </a>
                             </td>

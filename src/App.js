@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import { HashRouter as Router, Route, Routes, NavLink } from 'react-router-dom'; // Ensure NavLink is imported
+import { HashRouter as Router, Route, Routes, NavLink } from 'react-router-dom';
 import Favorites from './Favorites';
 import Popular from './Popular';
 import Create from './Create';

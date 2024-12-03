@@ -31,10 +31,10 @@ import i20 from './Assets/images/20.jpg';
 import recipeData from './recipedata.json';
 
 const trendingItems = [
-    { name: 'Patatas Bravas', imageSrc: i15 },
-    { name: 'Caramel Apple Strudel', imageSrc: i12 },
-    { name: 'Austrian Walnut Cookies', imageSrc: i13 },
-    { name: 'Chicken Yakitori', imageSrc: i14 },
+    { name: 'Patatas Bravas', imageSrc: i12 },
+    { name: 'Caramel Apple Strudel', imageSrc: i13 },
+    { name: 'Austrian Walnut Cookies', imageSrc: i14 },
+    { name: 'Chicken Yakitori', imageSrc: i15 },
 ];
 
 const HomePage = () => {

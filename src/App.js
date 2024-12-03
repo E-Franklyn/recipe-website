@@ -46,7 +46,7 @@ const RecipeWebsite = () => {
                     <Route path="/about" element={<AboutUs />} />
                     <Route path="/login" element={<Login />} />
                     <Route path="/signup" element={<Signup />} />
-                    <Route path="/recipe/:pageId" element={<Recipe />} />
+                    <Route path="/#/recipe/:pageId" element={<Recipe />} />
                 </Routes>
 
                 {/* ------------------------------------------ Footer -------------------------------------------------- */}

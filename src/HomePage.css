@@ -135,8 +135,7 @@
     border-radius: 10px;
     margin-top: 20px;
     border: 2px solid var(--opposite-background-color);
-    transition: transform 1s;
-    transition: border-color 0.5s ease-in-out, background-color 0.5s ease-in-out;
+    transition: transform 1s, border-color 0.5s ease-in-out, background-color 0.5s ease-in-out;
 }
 
 .random-recipe:hover {
@@ -250,8 +249,7 @@
     border-radius: 10px;
     margin-top: 20px;
     border: 2px solid var(--opposite-background-color);
-    transition: transform 1s;
-    transition: border-color 0.5s ease-in-out, background-color 0.5s ease-in-out;
+    transition: transform 1s, border-color 0.5s ease-in-out, background-color 0.5s ease-in-out;
 }
 
 .customer-reviews:hover {

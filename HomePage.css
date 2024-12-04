@@ -1,0 +1,329 @@
+.page-wrapper {
+    background-color: var(--background-color);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    transition: border-color 0.5s ease-in-out, background-color 0.5s ease-in-out;
+}
+
+.content {
+    display: block;
+    justify-content: space-between;
+    margin: 20px 5%;
+}
+
+.body {
+    margin: 0;
+}
+
+.top-sections {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.section {
+    width: 46.5%;
+}
+
+.daily-special,
+.trending {
+    color: var(--primary-text-color);
+    padding: 20px;
+    background-color: var(--background-color);
+    border-radius: 10px;
+    height: 30em;
+    border: 2px solid var(--opposite-background-color);
+    transition: transform 1s, border-color 0.5s ease-in-out, background-color 0.5s ease-in-out, color 0.5s ease-in-out;
+}
+
+.daily-special {
+    text-align: center;
+    overflow: hidden;
+    position: relative;
+}
+
+.daily-special-image {
+    width: 80%;
+    height: auto;
+    max-height: 85%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.trending {
+    text-align: center;
+}
+
+.daily-special:hover,
+.trending:hover {
+    transform: scale(1.025);
+}
+
+.daily-special img,
+.trending img {
+    border: 2px solid var(--opposite-background-color);
+    width: 100%;
+    height: auto;
+    margin-top: 5px;
+    transition: border-color 0.5s ease-in-out;
+}
+
+.section.trending {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.trending-title {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.trending-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 5px;
+    width: calc(50% - 20px);
+    font-weight: bold;
+}
+
+.trending-item img {
+    width: 100%;
+    height: auto;
+    max-height: 150px;
+    object-fit: cover;
+    margin-bottom: 5px;
+}
+
+.daily-special .button {
+    display: inline-block;
+    font-size: 1.5em;
+    color: var(--primary-text-color);
+    text-decoration: none;
+    font-weight: bold;
+    padding: 10px 0;
+    transition: color 0.5s ease-in-out;
+}
+
+.trending-item .button {
+    display: inline-block;
+    color: var(--primary-text-color);
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.5s ease-in-out;
+}
+
+.daily-special .daily-special .button:hover {
+    text-decoration: underline;
+}
+
+.daily-special-image {
+    display: block;
+    width: 100%;
+    height: auto;
+    margin-top: 10px;
+}
+
+.random-recipe {
+    width: 97.5%;
+    padding: 20px;
+    background-color: var(--background-color);
+    border-radius: 10px;
+    margin-top: 20px;
+    border: 2px solid var(--opposite-background-color);
+    transition: transform 1s, border-color 0.5s ease-in-out, background-color 0.5s ease-in-out;
+}
+
+.random-recipe:hover {
+    transform: scale(1.05);
+}
+
+.random-recipe-text {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.random-recipe h2 {
+    display: flex;
+    align-items: center;
+}
+
+@keyframes gradient-motion {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.recipe-image {
+    width: 500px;
+    height: auto;
+    object-fit: cover;
+    border: 2px solid black;
+    border-radius: 10px;
+}
+
+.random-button {
+    display: block;
+    margin: 0 auto;
+    padding: 10px 30px;
+    border-radius: 25px !important;
+    background: var(--gradient-button);
+    background-size: 200% 200%;
+    color: white;
+    border: 2px solid white;
+    box-shadow: 4px -4px 8px var(--gradient-button-shadow);
+    font-size: 1.5em !important;
+    cursor: pointer;
+    transition: border-color 0.3s ease;
+    transition: background-color 0.5s ease-in-out, box-shadow 1s ease-in-out;
+}
+
+.random-button:hover {
+    animation: gradient-motion 3s ease infinite;
+    border-color: black;
+}
+
+.random-recipe-text {
+    font-size: 18px;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+.random-recipe-text p {
+    margin: 5px 0;
+    display: block;
+}
+
+.random-recipe-content {
+    color: var(--primary-text-color);
+    display: flex;
+    transition: color 0.5s ease-in-out;
+}
+
+.random-recipe-block {
+    display: block;
+}
+
+.random-recipe-image {
+    width: 50%;
+}
+
+.random-padding {
+    padding: 20px;
+}
+
+.random-button {
+    font: inherit;
+    margin-top: 10px;
+    padding: 10px 15px;
+    font-size: 0.65em;
+    color: var(--background-color);
+    background-color: black;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: color 0.5s ease-in-out;
+}
+
+.random-button:hover {
+    background-color: darkgrey;
+}
+
+.customer-reviews {
+    width: 97.5%;
+    padding: 20px;
+    background-color: var(--background-color);
+    border-radius: 10px;
+    margin-top: 20px;
+    border: 2px solid var(--opposite-background-color);
+    transition: transform 1s, border-color 0.5s ease-in-out, background-color 0.5s ease-in-out;
+}
+
+.customer-reviews:hover {
+    transform: scale(1.05);
+}
+
+.reviews-title {
+    color: var(--primary-text-color);
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.customer-reviews-content {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.review-item {
+    display: flex;
+    justify-content: center;
+    width: 30%;
+    margin-bottom: 20px;
+}
+
+.review-container {
+    color: var(--primary-text-color);
+    background-color: var(--background-color);
+    border-radius: 10px;
+    box-shadow: var(--review-box-shadow);
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    transition: transform 0.5s;
+    transition: background-color 0.5s ease-in-out, color 0.5s ease-in-out, box-shadow 0.5s ease-in-out;
+}
+
+.review-container:hover {
+    transform: scale(1.05);
+}
+
+.profile-pic {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    overflow: hidden;
+}
+
+.review-details {
+    flex-grow: 1;
+    padding-left: 10px;
+}
+
+.review-header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.customer-name {
+    font-weight: bold;
+}
+
+.star-rating {
+    color: gold;
+}
+
+.instructions-list {
+    padding-left: 0px; 
+    margin: 0px;
+    list-style: none;
+}
+
+.instruction-item {
+    margin-bottom: 10px;
+    line-height: 1.5; 
+}

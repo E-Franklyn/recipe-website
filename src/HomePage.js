@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import './HomePage.css';
+import './index.css';
 
 import r1 from './Assets/Reviews/1.jpg';
 import r2 from './Assets/Reviews/2.jpg';
@@ -31,15 +33,16 @@ import i20 from './Assets/images/20.jpg';
 import recipeData from './recipedata.json';
 
 const trendingItems = [
-    { name: 'Patatas Bravas', imageSrc: i12 },
-    { name: 'Caramel Apple Strudel', imageSrc: i13 },
-    { name: 'Austrian Walnut Cookies', imageSrc: i14 },
-    { name: 'Chicken Yakitori', imageSrc: i15 },
+    { id: 12, name: 'Patatas Bravas', imageSrc: i12 },
+    { id: 13, name: 'Caramel Apple Strudel', imageSrc: i13 },
+    { id: 14, name: 'Austrian Walnut Cookies', imageSrc: i14 },
+    { id: 15, name: 'Chicken Yakitori', imageSrc: i15 },
 ];
 
 const HomePage = () => {
     const [dailySpecial, setDailySpecial] = useState(null);
     const [randomRecipe, setRandomRecipe] = useState({
+        id: '',
         image: '',
         name: '',
         description: '',
@@ -90,22 +93,25 @@ const HomePage = () => {
     };
 
     return (
+        <div className="page-wrapper">
         <main className="content">
             {/* -------------------------------------- Main Content ------------------------------------------------ */}
             <div className="top-sections">
                 <div className="section daily-special">
-                    <a href="/recipe-website/#/recipe/11" className="button">
+                    <Link to={`/recipe/${dailySpecial ? dailySpecial.id : ''}`} className="button">
                         Daily Special - {dailySpecial ? ` ${dailySpecial.name}` : ''}
-                    </a>
+                    </Link>
                     <img src={i11} alt="Daily Special" className="daily-special-image" />
                 </div>
                 <div className="section trending">
                     <h2 className="trending-title">Trending</h2>
                     {trendingItems.map((item, index) => (
-                        <div className="trending-item" key={index}>
-                            <img src={item.imageSrc} alt={`Trending Recipe ${item.name}`} />
-                            <p>{item.name}</p>
-                        </div>
+                            <div className="trending-item" key={index}>
+                                <img src={item.imageSrc} alt={`Trending Recipe ${item.name}`} />
+                                <Link to={`/recipe/${item ? item.id : ''}`} className="button">
+                                    <p>{item.name}</p>
+                                </Link>
+                            </div>
                     ))}
                 </div>
             </div>
@@ -200,6 +206,7 @@ const HomePage = () => {
                 </div>
             </div>
         </main>
+        </div>
     );
 }
 

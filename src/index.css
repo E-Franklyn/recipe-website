@@ -11,3 +11,55 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+:root {
+  /* Global */
+  /* transition: var(--transform), border-color 0.5s ease-in-out, background-color 0.5s ease-in-out, color 0.5s ease-in-out; */
+  --transform: transform 1s;
+  --background-color: #f8f8f8;
+  --secondary-background-color: #e6e6e6;
+  --opposite-background-color: #121212;
+  --primary-text-color: #0a0a0a;
+
+  /* App */
+  --footer-color: #f1f1f1;
+  --navbar-text-color: #f8f8f8;
+
+  /* Gradient Button */
+  --gradient-button: linear-gradient(to right, rgba(30, 30, 30, 1), rgba(100, 100, 100, 1), rgba(100, 100, 100, 1), rgba(100, 100, 100, 1), rgba(30, 30, 30, 1));
+  --gradient-button-shadow: rgba(0, 0, 0, 0.5);
+
+  /* Home Page */
+  --review-box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+
+  /* Create Page */
+  --form-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  
+  /* Login & Signup Page */
+  --login-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+[data-theme = "dark"] {
+  /* Global */
+  --background-color: #121212;
+  --secondary-background-color: #212121;
+  --opposite-background-color: #d2d2d2;
+  --primary-text-color: #ececec;
+
+  /* App */
+  --footer-color:#313131;
+  --navbar-text-color: #efefef;
+
+  /* Gradient Button */
+  --gradient-button: linear-gradient(to right, rgba(225, 225, 225, 1), rgba(125, 125, 125, 1), rgba(125, 125, 125, 1), rgba(125, 125, 125, 1), rgba(225, 225, 225, 1));
+  --gradient-button-shadow: rgba(255, 255, 255, 0.5);
+
+  /* Home Page */
+  --review-box-shadow: 0 4px 8px rgba(255, 255, 255, 0.2);
+
+  /* Create Page */
+  --form-shadow: 0 4px 6px rgba(255, 255, 255, 0.1);
+
+  /* Login & Signup Page */
+  --login-shadow: 0 4px 20px rgba(255, 255, 255, 0.9);
+}

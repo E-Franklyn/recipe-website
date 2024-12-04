@@ -3,6 +3,9 @@
     flex-direction: column;
     align-items: center;
     padding: 20px;
+    background-color: var(--background-color);
+    color: var(--primary-text-color);
+    transition: background-color 0.5s ease-in-out, text-color 0.5s ease-in-out;
 }
 
 .favorite-item {
@@ -31,19 +34,20 @@
     margin: 0 auto;
     padding: 10px 30px;
     border-radius: 25px !important;
-    background: linear-gradient(to right, rgba(30, 30, 30, 1), rgba(100, 100, 100, 1), rgba(100, 100, 100, 1), rgba(100, 100, 100, 1), rgba(30, 30, 30, 1));
+    background: var(--gradient-button);
     background-size: 200% 200%;
-    color: white;
-    border: 2px solid white;
-    box-shadow: 4px -4px 8px rgba(0, 0, 0, 0.5);
+    color: var(--background-color);
+    border: 2px solid var(--background-color);
+    box-shadow: 4px -4px 8px var(--gradient-button-shadow);
     font-size: 1.5em !important;
     cursor: pointer;
     transition: border-color 0.3s ease;
+    transition: background-color 0.5s ease-in-out, color 0.5s ease-in-out, border-color 0.5s ease-in-out, box-shadow 0.5s ease-in-out;
 }
 
 .frandom-button:hover {
     animation: gradient-motion 3s ease infinite;
-    border-color: black;
+    border-color: var(--opposite-background-color);
 }
 
 .favorite-item.removing {

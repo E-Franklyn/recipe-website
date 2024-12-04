@@ -30,32 +30,34 @@ const Recipe = () => {
     }
 
     return (
-        <div className="recipe-content">
-            <h2 className="recipe-header">{content.name}</h2>
-            <div className="content-r">
-                <div className="reciper-image-container">
-                    <img src={content.image} alt={content.name} className="recipe-image-r" />
+        <div className="page-wrapper">
+            <div className="recipe-content">
+                <h2 className="recipe-header">{content.name}</h2>
+                <div className="content-r">
+                    <div className="reciper-image-container">
+                        <img src={content.image} alt={content.name} className="recipe-image-r" />
+                    </div>
+                    <div className="recipe-ingredients">
+                        <h2 className="section-header">Ingredients</h2>
+                        <ul className="recipe-list">
+                            {content.ingredients.map((ingredient, index) => (
+                                <li key={index} className="recipe-list-item">{ingredient}</li>
+                            ))}
+                        </ul>
+                    </div>
+                    <div className="recipe-details">
+                        <h2 className="section-header">Description</h2>
+                        <p className="recipe-text">{content.description}</p>
+                    </div>
                 </div>
-                <div className="recipe-ingredients">
-                    <h2 className="section-header">Ingredients</h2>
-                    <ul className="recipe-list">
-                        {content.ingredients.map((ingredient, index) => (
-                            <li key={index} className="recipe-list-item">{ingredient}</li>
+                <div className="recipe-instructions">
+                    <h2 className="section-header">Instructions</h2>
+                    <ol className="recipe-list">
+                        {content.instruction.map((step, index) => (
+                            <li key={index} className="recipe-list-item">{step}</li>
                         ))}
-                    </ul>
+                    </ol>
                 </div>
-                <div className="recipe-details">
-                    <h2 className="section-header">Description</h2>
-                    <p className="recipe-text">{content.description}</p>
-                </div>
-            </div>
-            <div className="recipe-instructions">
-                <h2 className="section-header">Instructions</h2>
-                <ol className="recipe-list">
-                    {content.instruction.map((step, index) => (
-                        <li key={index} className="recipe-list-item">{step}</li>
-                    ))}
-                </ol>
             </div>
         </div>
     );

@@ -1,6 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './App.css';
+import './index.css';
 import { HashRouter as Router, Route, Routes, NavLink } from 'react-router-dom';
+import { Toggle } from './components/Toggle.js';
+import useLocalStorage from 'use-local-storage';
 import Favorites from './Favorites';
 import Popular from './Popular';
 import Create from './Create';
@@ -11,15 +14,18 @@ import Signup from './Signup';
 import Recipe from './Recipe';
 
 const RecipeWebsite = () => {
+    const [darkMode, setDarkMode] = useLocalStorage(false);
+
     return (
         <Router>
-            <div>
+            <div data-theme={darkMode ? "dark" : ""}>
                 {/* ------------------------------------------ Header -------------------------------------------------- */}
                 <header>
                     <div className="title">Recipe Browser System</div>
                     <div className="search-bar">
                         <input type="text" placeholder="Search recipes..." />
                     </div>
+                    <Toggle isChecked={darkMode} handleChange={() => setDarkMode(!darkMode)} />
                     <div className="auth-buttons">
                         <NavLink to="/login" className="login-link">Login</NavLink>
                         <NavLink to="/signup">Signup</NavLink>

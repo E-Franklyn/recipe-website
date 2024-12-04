@@ -34,20 +34,18 @@
     margin: 0 auto;
     padding: 10px 30px;
     border-radius: 25px !important;
-    background: var(--gradient-button);
-    background-size: 200% 200%;
-    color: var(--background-color);
-    border: 2px solid var(--background-color);
-    box-shadow: 4px -4px 8px var(--gradient-button-shadow);
+    background: red; /* Changed to red */
+    color: white; /* Updated text color for better contrast */
+    border: 2px solid red; /* Border color to match the background */
+    box-shadow: 4px -4px 8px rgba(255, 0, 0, 0.5); /* Adjusted shadow for a red glow effect */
     font-size: 1.5em !important;
     cursor: pointer;
-    transition: border-color 0.3s ease;
-    transition: background-color 0.5s ease-in-out, color 0.5s ease-in-out, border-color 0.5s ease-in-out, box-shadow 0.5s ease-in-out;
+    transition: border-color 0.3s ease, background-color 0.5s ease-in-out, color 0.5s ease-in-out, box-shadow 0.5s ease-in-out;
 }
 
 .frandom-button:hover {
-    animation: gradient-motion 3s ease infinite;
-    border-color: var(--opposite-background-color);
+    animation: none; /* Removed gradient motion */
+    border-color: darkred; /* Border becomes darker red on hover */
 }
 
 .favorite-item.removing {

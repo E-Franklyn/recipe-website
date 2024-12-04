@@ -67,7 +67,7 @@ const Favorites = () => {
                         <p>{favorite.description}</p>
                     </div>
                     <div className="f-right-section">
-                        <button className="frandom-button" onClick={() => handleUnfavorite(favorite.id)}>Unfavorite</button>
+                        <button className="frandom-button" onClick={() => handleUnfavorite(favorite.id)}>Remove</button>
                     </div>
                 </div>
             ))}

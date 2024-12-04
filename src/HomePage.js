@@ -106,17 +106,29 @@ const HomePage = () => {
                 <div className="section trending">
                     <h2 className="trending-title">Trending</h2>
                     {trendingItems.map((item, index) => (
-                            <div className="trending-item" key={index}>
-                                <img src={item.imageSrc} alt={`Trending Recipe ${item.name}`} />
-                                <Link to={`/recipe/${item ? item.id : ''}`} className="button">
-                                    <p>{item.name}</p>
-                                </Link>
-                            </div>
+                        <div className="trending-item" key={index}>
+                            <img src={item.imageSrc} alt={`Trending Recipe ${item.name}`} />
+                            <Link to={`/recipe/${item ? item.id : ''}`} className="button">
+                                <p>{item.name}</p>
+                            </Link>
+                        </div>
                     ))}
                 </div>
             </div>
 
+            {/* -------------------------------------- All Recipes ------------------------------------------------ */}
+            <div className="section normal-section">
+                    <div className="normal-item">AAA</div>
+                    <div className="normal-item">AAA</div>
+                    <div className="normal-item">AAA</div>
+                    <div className="normal-item">AAA</div>
+                    <div className="normal-item">AAA</div>
+                    <div className="normal-item">AAA</div>
+            </div>
+
+            {/* -------------------------------------- Random Recipe ------------------------------------------------ */}
             <div className="section random-recipe">
+                <h1>Not feeling it? Try a random recipe!</h1>
                 <button className="random-button" onClick={handleRandomRecipe}>Random Recipe</button>
                 <div className="random-recipe-content">
                     <div className="random-recipe-image">
@@ -131,7 +143,14 @@ const HomePage = () => {
                                     <p className="random-padding name-text">Name: {randomRecipe.name}</p>
                                     <p className="random-padding">Description: {randomRecipe.description}</p>
                                     <p className="random-padding">Ingredients: {randomRecipe.ingredients.join(', ')}</p>
-                                    <p className="random-padding">Instructions: {randomRecipe.instruction.join('. ')}</p>
+                                    <p className="random-padding">Instructions:</p>
+                                    <ul className="instruction-list">
+                                        {randomRecipe.instruction.map((step, index) => (
+                                            <li key={index} className="instruction-item">
+                                                {step}
+                                            </li>
+                                        ))}
+                                    </ul>
                                 </>
                             )}
                         </div>

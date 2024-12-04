@@ -136,13 +136,13 @@ const HomePage = () => {
             <div className="section normal-section">
                 {recipeData.recipes.map((recipe) => (
                     <div className="normal-item">
-                        <img
-                            src={recipeImages[recipe.id]}
-                            alt={recipe.name}
-                            className="normal-item-image"
-                        />                   
                         <Link to={`/recipe/${recipe ? recipe.id : ''}`} className="button">
-                            <p>{recipe.name}</p>
+                            <img
+                                src={recipeImages[recipe.id]}
+                                alt={recipe.name}
+                                className="normal-item-image"
+                            />                   
+                            <p className="normal-item-text">{recipe.name}</p>
                         </Link>
                     </div>))}
             </div>

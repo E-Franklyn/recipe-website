@@ -50,10 +50,25 @@ const HomePage = () => {
         instruction: []
     });
     const [showRecipeDetails, setShowRecipeDetails] = useState(false);
+    const [recipeImages, setRecipeImages] = useState({});
 
     useEffect(() => {
         const recipe = recipeData.recipes.find(item => item.id === 11);
         setDailySpecial(recipe);
+    }, []);
+
+    // dynamically load all images
+    useEffect(() => {
+        recipeData.recipes.forEach(recipe => {
+            import(`./Assets/images/${recipe.id}.jpg`)
+                .then(image => {
+                    setRecipeImages(prev => ({
+                        ...prev,
+                        [recipe.id]: image.default
+                    }));
+                })
+                .catch(err => console.error(`Error loading image for recipe ${recipe.id}:`, err));
+        });
     }, []);
 
     const handleRandomRecipe = () => {
@@ -117,13 +132,19 @@ const HomePage = () => {
             </div>
 
             {/* -------------------------------------- All Recipes ------------------------------------------------ */}
+            <h1>Recipes</h1>
             <div className="section normal-section">
-                    <div className="normal-item">AAA</div>
-                    <div className="normal-item">AAA</div>
-                    <div className="normal-item">AAA</div>
-                    <div className="normal-item">AAA</div>
-                    <div className="normal-item">AAA</div>
-                    <div className="normal-item">AAA</div>
+                {recipeData.recipes.map((recipe) => (
+                    <div className="normal-item">
+                        <img
+                            src={recipeImages[recipe.id]}
+                            alt={recipe.name}
+                            className="normal-item-image"
+                        />                   
+                        <Link to={`/recipe/${recipe ? recipe.id : ''}`} className="button">
+                            <p>{recipe.name}</p>
+                        </Link>
+                    </div>))}
             </div>
 
             {/* -------------------------------------- Random Recipe ------------------------------------------------ */}

@@ -33,6 +33,7 @@ header .title {
     font-weight: bold;
     color: var(--primary-text-color);
     text-decoration: none;
+    transition: color 0.5s ease-in-out;
 }
 
 header .search-bar {

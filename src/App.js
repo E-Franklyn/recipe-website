@@ -152,7 +152,7 @@ const RecipeWebsite = () => {
                             <h3>FOLLOW US</h3>
                             <div className="social-icons">
                                 {['youtube', 'facebook', 'twitter', 'tiktok'].map((platform) => (
-                                    <a key={platform} href="https://www.youtube.com/"><i className={`fa-brands fa-${platform}`}></i></a>
+                                    <a key={platform} href={`https://www.${platform}.com/`}><i className={`fa-brands fa-${platform}`}></i></a>
                                 ))}
                             </div>
                         </div>

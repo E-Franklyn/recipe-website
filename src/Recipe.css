@@ -11,6 +11,9 @@
     border: 2px solid var(--opposite-background-color);
     padding: 10px;
     transition: border-color 0.5s ease-in-out;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
 }
 
 .recipe-header {
@@ -84,4 +87,14 @@
     border: 2px solid black;
     display: block;
     margin: 0 auto;
+}
+.favorite-button {
+    padding: 10px 15px;
+    background-color: var(--primary-text-color);
+    color: var(--background-color);
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+    font-size: 1rem;
+   
 }

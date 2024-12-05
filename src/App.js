@@ -84,7 +84,7 @@ const RecipeWebsite = () => {
             <div data-theme={darkMode ? "dark" : ""}>
                 {/* ------------------------------------------ Header -------------------------------------------------- */}
                 <header>
-                    <Link to="/" className="title">Recipe Browser System</Link>
+                    <div className="title">Recipe Browser System</div>
                     <div className="search-bar">
                         <input 
                             type="text" 
@@ -141,6 +141,8 @@ const RecipeWebsite = () => {
                     <Route path="/login" element={<Login />} />
                     <Route path="/signup" element={<Signup />} />
                     <Route path="/recipe/:pageId" element={<Recipe />} />
+                    <Route path="/home" element={<HomePage />} />
+                    <Route path="/signup" element={<Signup />} />
                 </Routes>
 
                 {/* ------------------------------------------ Footer -------------------------------------------------- */}
@@ -171,7 +173,7 @@ const RecipeWebsite = () => {
                         <div className="footer-section developers">
                             <h3>DEVELOPERS</h3>
                             <div className="circles">
-                                {['EF', 'SYG', 'JEL', 'TZ', 'JZ'].map((initials) => (
+                                {['EF', 'SG', 'JEL', 'TZ', 'JZ'].map((initials) => (
                                     <div key={initials} className="circle">{initials}</div>
                                 ))}
                             </div>

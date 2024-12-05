@@ -1,25 +1,21 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import './Signup.css';
 
 const Signup = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const navigate = useNavigate();
 
-    const handleSubmit = async (e) => {
+    const handleSubmit = (e) => {
         e.preventDefault();
-        try {
-            const response = await fetch('https://your-heroku-backend-url/signup', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({ email, password }),
-            });
-            const data = await response.json();
-            console.log(data);
-        } catch (error) {
-            console.error('Error:', error);
-        }
+
+        localStorage.setItem('userEmail', email);
+        localStorage.setItem('userPassword', password);
+
+        alert('Signup successful! Your account has been created.');
+
+        navigate('/home');
     };
 
     return (

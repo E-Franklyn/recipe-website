@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './Create.css';
 import image1 from './Assets/Create/1.jpg';
 import image2 from './Assets/Create/2.jpg';
@@ -9,8 +9,16 @@ const Create = () => {
         title: '',
         description: '',
         ingredients: '',
-        instructions: ''
+        instructions: '',
+        image: null,
     });
+
+    useEffect(() => {
+        const storedRecipes = localStorage.getItem('recipes');
+        if (storedRecipes) {
+            setRecipes(JSON.parse(storedRecipes));
+        }
+    }, []);
 
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -30,8 +38,10 @@ const Create = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        setRecipes([...recipes, formData]);
-        setFormData({ title: '', description: '', ingredients: '', instructions: '', image: null});
+        const updatedRecipes = [...recipes, formData];
+        localStorage.setItem('recipes', JSON.stringify(updatedRecipes));
+        setRecipes(updatedRecipes);
+        setFormData({ title: '', description: '', ingredients: '', instructions: '', image: null });
     };
 
     return (
@@ -40,7 +50,6 @@ const Create = () => {
             <div className="image-wrapper">
                 <img src={image1} alt="idk1" className="side-image" />
                 <form className="recipe-form" onSubmit={handleSubmit}>
-                    
                     <label>
                         Recipe Name:
                         <input
@@ -82,15 +91,15 @@ const Create = () => {
                         />
                     </label>
                     <label>
-                    Upload Image:
-                    <input type="file" accept="image/*" onChange={handleImageUpload} />
-                </label>
-                {formData.image && (
-                    <div className="image-preview">
-                        <p>Image Preview:</p>
-                        <img src={formData.image} alt="Preview" className="preview-image" />
-                    </div>
-                )}
+                        Upload Image:
+                        <input type="file" accept="image/*" onChange={handleImageUpload} />
+                    </label>
+                    {formData.image && (
+                        <div className="image-preview">
+                            <p>Image Preview:</p>
+                            <img src={formData.image} alt="Preview" className="preview-image" />
+                        </div>
+                    )}
                     <button type="submit">Submit Recipe</button>
                 </form>
                 <img src={image2} alt="idk2" className="side-image" />

@@ -25,6 +25,18 @@ const Recipe = () => {
         }
     }, [pageId]);
 
+    const handleFavorite = () => {
+        const existingFavorites = JSON.parse(localStorage.getItem('favorites')) || [];
+        const isAlreadyFavorited = existingFavorites.some(fav => fav.id === content.id);
+        if (!isAlreadyFavorited) {
+            const updatedFavorites = [...existingFavorites, content];
+            localStorage.setItem('favorites', JSON.stringify(updatedFavorites));
+            alert(`${content.name} has been added to favorites!`);
+        } else {
+            alert(`${content.name} is already in your favorites.`);
+        }
+    };
+
     if (content === null) {
         return <div>Error: Recipe not found or loading...</div>;
     }
@@ -58,6 +70,7 @@ const Recipe = () => {
                         ))}
                     </ol>
                 </div>
+                <button className="favorite-button" onClick={handleFavorite}>Add to Favorites</button>
             </div>
         </div>
     );

@@ -1,29 +1,32 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import './Login.css';
+
+const ADMIN_CREDENTIALS = {
+    email: 'admin@example.com',
+    password: 'admin123',
+};
 
 const Login = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const navigate = useNavigate();
 
-    const handleSubmit = async (e) => {
+    const handleSubmit = (e) => {
         e.preventDefault();
-        try {
-            const response = await fetch('https://your-heroku-app.herokuapp.com/api/login', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({ email, password }),
-            });
 
-            const data = await response.json();
-            if (response.ok) {
-                console.log('Login successful:', data);
-            } else {
-                console.error('Login failed:', data.message);
-            }
-        } catch (error) {
-            console.error('Error logging in:', error);
+        const savedEmail = localStorage.getItem('userEmail');
+        const savedPassword = localStorage.getItem('userPassword');
+
+        // Sign in Check
+        if (email === ADMIN_CREDENTIALS.email && password === ADMIN_CREDENTIALS.password) {
+            alert('Welcome Admin!');
+            navigate('/home'); 
+        } else if (email === savedEmail && password === savedPassword) {
+            alert('Login successful! Welcome back.');
+            navigate('/home');
+        } else {
+            alert('Invalid credentials! Please try again.');
         }
     };
 

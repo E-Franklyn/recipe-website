@@ -84,7 +84,7 @@ const RecipeWebsite = () => {
             <div data-theme={darkMode ? "dark" : ""}>
                 {/* ------------------------------------------ Header -------------------------------------------------- */}
                 <header>
-                    <div className="title">Recipe Browser System</div>
+                    <Link to="/" className="title">Recipe Browser System</Link>
                     <div className="search-bar">
                         <input 
                             type="text" 

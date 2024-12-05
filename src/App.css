@@ -31,6 +31,8 @@ header {
 header .title {
     font-size: 1.75em;
     font-weight: bold;
+    color: var(--primary-text-color);
+    text-decoration: none;
 }
 
 header .search-bar {

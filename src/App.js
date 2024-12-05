@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './App.css';
 import './index.css';
-import { HashRouter as Router, Route, Routes, NavLink } from 'react-router-dom';
+import { HashRouter as Router, Route, Routes, NavLink, Link } from 'react-router-dom';
 import { Toggle } from './components/Toggle.js';
 import useLocalStorage from 'use-local-storage';
 import Favorites from './Favorites';
@@ -12,9 +12,72 @@ import HomePage from './HomePage';
 import Login from './Login';
 import Signup from './Signup';
 import Recipe from './Recipe';
+import recipeData from './recipedata.json';
 
 const RecipeWebsite = () => {
     const [darkMode, setDarkMode] = useLocalStorage(false);
+    const [searchQuery, setSearchQuery] = useState('');
+    const [filteredRecipes, setFilteredRecipes] = useState([]);
+    const [recipeImages, setRecipeImages] = useState({});
+
+    const handleSearch = (event) => {
+        const query = event.target.value;
+        setSearchQuery(query);
+
+        if (query.trim() === '') {
+            setFilteredRecipes([]);
+            return;
+        }
+
+        const filterSegments = query.split(' ').map(segment => segment.trim());
+        let filtered = [...recipeData.recipes];
+        filterSegments.forEach(segment => {
+        const filterMatch = segment.match(/^(\w+):\s*(.+)$/);
+            
+        if (filterMatch) {
+            const [_, filterType, filterValue] = filterMatch;
+            
+            filtered = filtered.filter(recipe => {
+                switch (filterType.toLowerCase()) {
+                    case 'id':
+                        return recipe.id == filterValue;
+                    case 'ingredient':
+                        const searchIngredients = filterValue.toLowerCase().split(',');
+                        return searchIngredients.every(searchIngredient =>
+                            recipe.ingredients.some(ingredient =>
+                                ingredient.toLowerCase().includes(searchIngredient)
+                            )
+                        );
+                    case 'description':
+                        const searchDesc = filterValue.toLowerCase().split('_');
+                        return searchDesc.every(searchDesc => 
+                            recipe.description.toLowerCase().includes(searchDesc)
+                        );
+                    default:
+                        return;
+                }
+            });
+        } else {
+            filtered = filtered.filter(recipe =>
+                recipe.name.toLowerCase().includes(segment.toLowerCase())
+            );
+        }
+    });
+
+    setFilteredRecipes(filtered);
+    };
+    
+    useEffect(() => {
+        recipeData.recipes.forEach(recipe => {
+            import(`./Assets/images/${recipe.id}.jpg`)
+                .then(image => {
+                    setRecipeImages(prev => ({
+                        ...prev,
+                        [recipe.id]: image.default
+                    }));
+                })
+        });
+    }, []);
 
     return (
         <Router>
@@ -23,7 +86,32 @@ const RecipeWebsite = () => {
                 <header>
                     <div className="title">Recipe Browser System</div>
                     <div className="search-bar">
-                        <input type="text" placeholder="Search recipes..." />
+                        <input 
+                            type="text" 
+                            placeholder="Search recipes..." 
+                            value={searchQuery}
+                            onChange={handleSearch}
+                        />
+                        {searchQuery && filteredRecipes.length > 0 && (
+                            <div className="search-results">
+                                {filteredRecipes.map(recipe => (
+                                    <Link 
+                                        key={recipe.id} 
+                                        to={`/recipe/${recipe.id}`}
+                                        className="search-result-item"
+                                        onClick={() => setSearchQuery('')}
+                                        >
+
+                                        <img
+                                            src={recipeImages[recipe.id]}
+                                            alt={recipe.name}
+                                            className="search-result-image"
+                                        />  
+                                        <div className="search-result-text">{recipe.name}</div>
+                                    </Link>
+                                ))}
+                            </div>
+                        )}
                     </div>
                     <Toggle isChecked={darkMode} handleChange={() => setDarkMode(!darkMode)} />
                     <div className="auth-buttons">

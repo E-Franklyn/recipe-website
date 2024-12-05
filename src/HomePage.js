@@ -67,7 +67,6 @@ const HomePage = () => {
                         [recipe.id]: image.default
                     }));
                 })
-                .catch(err => console.error(`Error loading image for recipe ${recipe.id}:`, err));
         });
     }, []);
 

@@ -24,7 +24,8 @@ header {
     gap: 20px;
     top: 0px;
     height: 40px;
-    transition: border-color 0.5s ease-in-out, background-color 0.5s ease-in-out, text-color 0.5s ease-in-out;
+    z-index: 2;
+    transition: border-color 0.5s ease-in-out, background-color 0.5s ease-in-out, color 0.5s ease-in-out;
 }
 
 header .title {
@@ -38,13 +39,63 @@ header .search-bar {
 }
 
 header .search-bar input {
+    color: var(--primary-text-color);
     background-color: var(--background-color);
     font-family: 'Raleway', sans-serif;
     border-radius: 20px;
     width: 30em;
     padding: 10px 20px;
     border: 2px solid var(--opposite-background-color);
-    transition: border-color 0.5s ease-in-out, background-color 0.5s ease-in-out;
+    transition: color 0.5s ease-in-out, border-color 0.5s ease-in-out, background-color 0.5s ease-in-out;
+}
+
+.search-results {
+    position: absolute;
+    background-color: var(--background-color);
+    border: 2px solid var(--opposite-background-color);
+    border-radius: 0 0 10px 10px;
+    width: 439px;
+    max-height: 300px;
+    overflow-y: auto;
+    z-index: 1000;
+    transition: background-color 0.5s ease-in-out;
+}
+
+.search-result-image {
+    width: 100%;
+    max-height: 50px;
+    object-fit: cover;
+    margin-bottom: 5px;
+}
+
+.search-result-item {
+    display: block;
+    padding: 10px 20px;
+    color: var(--primary-text-color);
+    text-decoration: none;
+    transition: color 0.5s ease-in-out;
+    right: 50%;
+    left: 50%;
+    bottom: 15%;
+}
+
+.search-result-item:hover {
+    background-color: gray;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.search-results::-webkit-scrollbar {
+    width: 8px;
+}
+
+.search-results::-webkit-scrollbar-track {
+    background-color: var(--background-color);
+    transition: background-color 0.5s ease-in-out;
+}
+
+.search-results::-webkit-scrollbar-thumb {
+    background: gray;
+    border-radius: 4px;
 }
 
 header .search-bar::after {
@@ -72,6 +123,7 @@ header .search-bar::after {
     padding: 5px 10px;
     border-radius: 5px;
     font-size: 1.2em;
+    transition: color 0.5s ease-in-out;
 }
 
 .login-link:hover,
@@ -82,13 +134,13 @@ header .search-bar::after {
 
 header, nav {
     position: sticky;
-    z-index: 1;
 }
 
 nav {
     background-color: #333;
     top: 60px;
     color: white;
+    z-index: 1;
 }
 
 nav ul {
